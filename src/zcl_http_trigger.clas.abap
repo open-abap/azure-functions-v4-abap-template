@@ -5,6 +5,6 @@ ENDCLASS.
 
 CLASS zcl_http_trigger IMPLEMENTATION.
   METHOD zif_abap_serverless_v1~run.
-    WRITE / 'hello world'.
+    WRITE / 'hello from abap'.
   ENDMETHOD.
 ENDCLASS.

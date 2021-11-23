@@ -1,10 +1,10 @@
 {
   "name": "azure-functions-v4-abap-template",
   "private": true,
-  "version": "",
+  "version": "0.1.0",
   "description": "azure-functions-v4-abap-template",
   "scripts": {
-    "test": "abaplint && abap_transpile test/abap_transpile.json && func start"
+    "test": "abaplint && rm -rf output && abap_transpile test/abap_transpile.json && func start"
   },
   "author": "",
   "devDependencies": {

@@ -5,6 +5,7 @@ ENDCLASS.
 
 CLASS zcl_http_trigger IMPLEMENTATION.
   METHOD zif_abap_serverless_v1~run.
-    WRITE / 'hello from abap'.
+    WRITE / 'Some console output from ABAP'.
+    response = VALUE #( body = |from abap { method } { query }| ).
   ENDMETHOD.
 ENDCLASS.

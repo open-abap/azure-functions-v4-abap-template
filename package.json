@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "description": "azure-functions-v4-abap-template",
   "scripts": {
-    "test": "abaplint && rm -rf output && abap_transpile test/abap_transpile.json && func start"
+    "transpile": "rm -rf output && abap_transpile test/abap_transpile.json",
+    "downport": "rm -rf downport && cp -r src downport && abaplint --fix abaplint_downport.jsonc",
+    "test": "abaplint && npm run downport && npm run transpile && func start"
   },
   "author": "",
   "devDependencies": {

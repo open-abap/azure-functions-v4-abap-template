@@ -6,6 +6,11 @@
     "skipGeneratedFunctionGroups": true
   },
   "dependencies": [
+    {
+      "url": "https://github.com/open-abap/open-abap",
+      "folder": "/deps",
+      "files": "/src/**/*.*"
+    }
   ],
   "syntax": {
     "version": "v755",

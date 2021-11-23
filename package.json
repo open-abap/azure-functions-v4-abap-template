@@ -1,0 +1,19 @@
+{
+  "name": "azure-functions-v4-abap-template",
+  "private": true,
+  "version": "0.1.0",
+  "description": "azure-functions-v4-abap-template",
+  "scripts": {
+    "transpile": "rm -rf output && abap_transpile test/abap_transpile.json",
+    "unit": "node output/index.mjs",
+    "downport": "rm -rf downport && cp -r src downport && abaplint --fix abaplint_downport.jsonc",
+    "test": "abaplint && npm run downport && npm run transpile && npm run unit && func start"
+  },
+  "author": "Lars Hvam",
+  "devDependencies": {
+    "@abaplint/cli": "^2.81.3",
+    "@abaplint/runtime": "^1.6.65",
+    "@abaplint/transpiler-cli": "^1.6.65",
+    "abapmerge": "^0.14.3"
+  }
+}

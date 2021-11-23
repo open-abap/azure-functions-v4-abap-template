@@ -1,0 +1,10 @@
+{
+  "name": "azure-functions-abap-template",
+  "private": true,
+  "version": "",
+  "description": "",
+  "scripts" : {
+    "test": "func start"
+  },
+  "author": ""
+}

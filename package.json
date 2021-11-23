@@ -12,8 +12,8 @@
   "author": "Lars Hvam",
   "devDependencies": {
     "@abaplint/cli": "^2.81.3",
-    "@abaplint/runtime": "^1.6.65",
-    "@abaplint/transpiler-cli": "^1.6.65",
+    "@abaplint/runtime": "^1.6.66",
+    "@abaplint/transpiler-cli": "^1.6.66",
     "abapmerge": "^0.14.3"
   }
 }

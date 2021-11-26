@@ -1,7 +1,4 @@
-import runtime from "@abaplint/runtime";
-global.abap = new runtime.ABAP();
-await import("../output/zcl_http_trigger.clas.mjs");
-await import("../output/zif_abap_serverless_v1.intf.mjs");
+await import("../output/init.mjs");
 
 // boilerplate
 export default async function (context, req) {

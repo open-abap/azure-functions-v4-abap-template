@@ -17,7 +17,6 @@ export default async function (context, req) {
        "isUnique":false,
        "keyFields":[]}),
     body: new abap.types.String()});
-  console.dir(req);
   request.get().body.set(req.body || "");
   const result = await trig.zif_abap_serverless_v1$run({method, query, request});
   console.dir(abap.console.get());

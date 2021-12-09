@@ -18,6 +18,14 @@ export default async function (context, req) {
        "keyFields":[]}),
     body: new abap.types.String()});
   request.get().body.set(req.body || "");
+  for (const h in req.headers) {
+    const add = new abap.types.Structure({
+      field: new abap.types.String(),
+      value: new abap.types.String()});
+    add.get().field.set(h);
+    add.get().field.set(req.headers[h]);
+    request.get().headers.append(add);
+  }
   const result = await trig.zif_abap_serverless_v1$run({method, query, request});
   console.dir(abap.console.get());
 

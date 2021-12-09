@@ -17,7 +17,7 @@ export default async function (context, req) {
        "isUnique":false,
        "keyFields":[]}),
     body: new abap.types.String()});
-  request.get().body.set(req.body || "");
+  request.get().body.set(req.rawBody || "");
   for (const h in req.headers) {
     const add = new abap.types.Structure({
       field: new abap.types.String(),

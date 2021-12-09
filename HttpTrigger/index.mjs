@@ -8,7 +8,18 @@ export default async function (context, req) {
   abap.console.clear();
   const trig = new abap.Classes['ZCL_HTTP_TRIGGER']();
   await trig.constructor_();
-  const result = await trig.zif_abap_serverless_v1$run({method, query});
+  const request = new abap.types.Structure(
+    {headers: new abap.types.Table(new abap.types.Structure({
+      field: new abap.types.String(),
+      value: new abap.types.String()}),
+      {"withHeader":false,
+       "type":"STANDARD",
+       "isUnique":false,
+       "keyFields":[]}),
+    body: new abap.types.String()});
+  console.dir(req);
+  request.get().body.set(req.body || "");
+  const result = await trig.zif_abap_serverless_v1$run({method, query, request});
   console.dir(abap.console.get());
 
   context.res.body = result.get().body.get();
